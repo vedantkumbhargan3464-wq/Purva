@@ -1,55 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
+  <title>Will You Date Me? 💜</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Purva 💘</title>
 
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      width: 100%;
-      height: auto;
-      overflow-y: auto;
-      background-color: #4b0082; /* PURPLE */
+      height: 100vh;
+      background: #E6E6FA; /* Lavender Purple */
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-family: Arial, sans-serif;
-      color: #7CFF9B; /* GREEN */
+      overflow: hidden;
     }
 
     .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 60px 24px 120px;
-      min-height: 180vh; /* force scroll */
-    }
-
-    <h1 style="
-  text-align:center;
-  font-size:40px;
-  margin-bottom:60px;
-  color:#00ff99;
-  font-weight:normal;
-">
-  For You, Purva 💜
-</h1>
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.9;
-      margin-bottom: 30px;
-    }
-
-    .big-love {
-      margin-top: 100px;
       text-align: center;
-      font-size: 22px;
-      color: #B6FFD3;
+      position: relative;
+      width: 100%;
+      height: 100%;
     }
 
-    .heart {
-      font-size: 32px;
+    h1 {
+      margin-top: 150px;
+      font-size: 28px;
+    }
+
+    .yes {
+      position: absolute;
+      left: 40%;
+      top: 50%;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      background: #9370DB;
+      color: white;
+      cursor: pointer;
+    }
+
+    .no {
+      position: absolute;
+      left: 55%;
+      top: 50%;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      background: #6A5ACD;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
     }
   </style>
 </head>
@@ -57,64 +60,47 @@
 <body>
 
   <div class="container">
+    <h1>Will you date me? 💜</h1>
 
-    <h1>For You, Purva 💜</h1>
-
-    <p>
-      Mala mahit nahi hi website tu kiti time gheun vachshil,
-      pan je lihit ahe te bilkul khara ahe.  
-      Mi perfect nahiye, ani kadachit mi kadhi pretend pan karnar nahi.
-      Pan ek goshta nakki ahe 
-      Je feel karto, te manapasun karto.
-    </p>
-
-    <p>
-      Aajkal sagle fast dhavat ahet —
-      fast boltat, fast promise kartatlp,
-      ani fast sodun pan jatat.
-      Mi tasla nahi ahe.
-      Mala shant goshti avadtat,
-      simple loka avadtat,
-    </p>
-
-    <p>
-      Pranjal ni jevha tujha baddal sangitla,
-      tevha mala ek goshta khup clear vatli —
-      tu simple ahe,
-      tu show-off nahiye karat,
-      tu fake pan nahiye.
-      Ani honestly,
-      hich simplicity aajkal khup rare ahe.
-    </p>
-
-    <p>
-      Mi tujha var pressure taknar nahi,
-      mi tujha decision manipulate pan karnar nahi.
-      Tu jashi ahes tashich changli ahes —
-      ani mala fakta evdhach sangaycha hota
-      ki tu mala khup avadli ahes,
-      quietly, calmly,
-      without any rush.
-    </p>
-
-    <p>
-      He bag tu jr mala accept kelas so it can be better for both of us 
-      and maybe you believe or don't but I have never dated any one but I would like to date you...
-      Would you like to date me??Mla tujha sobat time spent kryla, tujha rusva kadayla, tula manvayla,
-      tujhya smile ch reason banayla,
-      khup avdel I swear mi tula samjum gheil toxic relationship nahi thevnar🤞.
-    </p>
-
-    <div class="big-love">
-      Would you like to date me?
-      <br>
-      <span class="heart">💘</span>
-      <br>
-      — Vedant
-    </div>
-
+    <button class="yes" onclick="sayYes()">Yes 💖</button>
+    <button class="no" id="noBtn">No 😏</button>
   </div>
 
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    function moveButton() {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    // Desktop hover
+    noBtn.addEventListener("mouseover", moveButton);
+
+    // Mobile touch
+    noBtn.addEventListener("touchstart", function(e) {
+      e.preventDefault();
+      moveButton();
+    });
+
+    function sayYes() {
+      document.body.innerHTML = `
+        <div style="
+          height:100vh;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          font-size:30px;
+          color:#4B0082;
+          background:#E6E6FA;">
+          YAYYYY 💜 I knew it 😌✨
+        </div>
+      `;
+    }
+  </script>
+
 </body>
-</html>
-  
+</html>     
